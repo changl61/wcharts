@@ -1,0 +1,8 @@
+/*-----------------------------------
+ | 条件范围插件
+-----------------------------------*/
+.es-term-ranges { list-style: none; margin: 0; padding: 0;}
+.es-term-ranges li{ margin-bottom: 8px;}
+.es-term-ranges li .form-control{ width: 115px; display: inline-block;}
+.es-term-ranges li .glyphicon-minus-sign{ cursor: pointer; margin-left: 8px;}
+.es-term-ranges li .btn-block{ width: 244px;}

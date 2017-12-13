@@ -1,0 +1,117 @@
+/*-----------------------------------
+ | 覆盖bootstrap
+-----------------------------------*/
+/* 字体 */
+h4, .h4 { font-size: 16px;}
+h3, .h3 { font-size: 18px;}
+h2, .h2 { font-size: 24px;}
+h1, .h1 { font-size: 30px;}
+
+/* 按钮 */
+.btn{ font-size: 12px; padding: 5px 10px; border-radius: 3px; line-height: 16px; transition: all 0.3s ease 0s;}
+.btn-lg, .btn-group-lg > .btn{ font-size: 14px;  padding: 6px 12px; border-radius: 3px;}
+.btn-sm, .btn-group-sm > .btn{ font-size: 12px;  padding: 1px 5px; border-radius: 2px;}
+.btn-xs, .btn-group-xs > .btn{ font-size: 10px;  padding: 1px 4px; border-radius: 2px; line-height: 14px;}
+
+.btn-icon, .btn-icon:focus, .btn-icon:hover, .btn-icon.active, .btn-icon:active, .btn-icon[disabled], fieldset[disabled] .btn-icon{ background-color: transparent; box-shadow: none;}
+.btn.btn-icon{ color: #ddd; font-size: 14px; padding: 5px 2px;}
+.btn.btn-icon:hover{ color: #fff;}
+.caret{ color: #999;}
+
+.btn-beautiful {color: #aaa; border-color: #764bef; background-color: transparent;}
+.btn-beautiful:hover { color: #fff;}
+
+.btn-default{color: #ccc; border-color: #444; background-color: #333; }
+.btn-default:hover, .btn-default:active, .btn-default:active:hover, .open > .dropdown-toggle.btn-default, .open > .dropdown-toggle.btn-default:focus, .open > .dropdown-toggle.btn-default:hover {color: #ddd; border-color: #666; background-color: #444;}
+.btn-default.active { color: #eee; background-color: #006a84; border-color: #2e6da4;}
+.btn-default.active:hover, .btn-default.active:focus { color: #eee; background-color: #006a84; border-color: #2e6da4;}
+.btn-primary{ color: #ddd; border-color: #00809a; background-color: #006a84;}
+.btn-primary:hover, .btn-primary:active, .btn-primary:active:hover, .open > .dropdown-toggle.btn-primary, .open > .dropdown-toggle.btn-primary:focus { color: #eee; border-color: #0ac; background-color: #008da9;}
+.btn-success{ color: #ddd; border-color: #449d44; background-color: #398439;}
+.btn-success:hover, .btn-success:active, .btn-success:active:hover, .open > .dropdown-toggle.btn-success, .open > .dropdown-toggle.btn-success:focus { color: #eee; border-color: #5cb85c; background-color: #4cae4c;}
+.btn-info{ color: #ddd; border-color: #31b0d5; background-color: #269abc;}
+.btn-info:hover, .btn-info:active, .btn-info:active:hover, .open > .dropdown-toggle.btn-info, .open > .dropdown-toggle.btn-info:focus { color: #eee; border-color: #5bc0de; background-color: #46b8da;}
+.btn-warning{ color: #ddd; border-color: #ec971f; background-color: #d58512;}
+.btn-warning:hover, .btn-warning:active, .btn-warning:active:hover, .open > .dropdown-toggle.btn-warning, .open > .dropdown-toggle.btn-warning:focus { color: #eee; border-color: #f0ad4e; background-color: #eea236;}
+.btn-danger{ color: #ddd; border-color: #c9302c; background-color: #ac2925;}
+.btn-danger:hover, .btn-danger:active, .btn-danger:active:hover, .open > .dropdown-toggle.btn-danger, .open > .dropdown-toggle.btn-danger:focus { color: #eee; border-color: #d9534f; background-color: #d43f3a;}
+.btn-link:focus, .btn-link:hover{ color: #3e94dd;}
+.btn-group > .btn + .dropdown-toggle{ padding-left: 4px; padding-right: 4px;}
+
+/* 下拉菜单 */
+.dropdown-menu{ font-size: 12px; min-width: 100px; background-color: #666; border-color: #666;}
+.dropdown-menu > li > a{ padding: 3px 10px; color: #ddd;}
+.dropdown-menu .divider{ margin: 3px 0; background-color: #888;}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{ background-color: #777; color: #fff;}
+.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:hover { color: #aaa;}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:hover{ background-color: #0ac;}
+
+/* 表单 */
+form .form-group { margin: 0 0 10px 0;}
+form .form-group .form-label{ padding: 5px 15px 0 0; margin: 0; text-align: right; color: #999; font-size: 12px; font-weight: bolder;}
+form .form-group .form-input{ padding: 0;}
+form .form-group .form-tips{ padding: 5px 0 0 15px; margin: 0; text-align: left; color: #737373;}
+form .form-group .form-input .form-tips{ position: relative; top: 2px; display: inline-block;}
+form .form-group .help-block{ margin-bottom: 0;}
+.form-control{ padding: 5px 10px; height: 28px; line-height: 16px; font-size: 12px; border-radius: 3px; background-color: #333; border-color: #444; color: #ddd;}
+.form-control:focus{ border-color: #666;}
+.input-group-addon{ background-color: #333; border-color: #444;}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control{ background-color: #333; opacity: 0.6;}
+
+/* 搜索框 */
+.form-keywords { position: relative;}
+.form-keywords .glyphicon-search{ position: absolute; left: 7px; top: 7px;}
+.form-keywords .form-control{ padding-left: 24px;}
+
+/* 魔态框 */
+.modal-dialog{ margin-top: 60px;}
+.modal-content{ overflow: hidden; background-color: #1f1f1f; border: solid 2px #666;}
+.modal-header, .modal-body, .modal-footer{ padding: 10px; border-color: #303030; position: relative;}
+.modal-title { font-weight: normal;}
+
+/* 表格 */
+.table-bordered{ background-color: #1a1a1a; }
+.table-bordered, .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+    border-color: #333;
+}
+
+/* 分页 */
+.pagination > li > a, .pagination > li > span{ background-color: #333; border-color: #444; color: #aaa; line-height: 12px;}
+.pagination > li:first-child > a, .pagination > li:first-child > span{ border-bottom-left-radius: 3px; border-top-left-radius: 3px;}
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination >li > span:hover{ background-color: #353535; color: #eee; border-color: #444;}
+
+/* 消息框 */
+.message { border: solid 1px #ccc; border-radius: 4px; margin-bottom: 10px; padding: 12px 16px 12px 12px; position: relative; font-size: 14px; text-align: center;}
+.message button.close { position: absolute; right: 4px; top: -1px; font-size: 18px;}
+.message-default { border-color: #777; background-color: #666; color: #eee;}
+.message-primary { border-color: #286090; background-color: #204d74; color: #eee;}
+.message-success { border-color: #449d44; background-color: #398439; color: #eee;}
+.message-info { border-color: #31b0d5; background-color: #269abc; color: #eee;}
+.message-warning { border-color: #ec971f; background-color: #d58512; color: #eee;}
+.message-danger { border-color: #c9302c; background-color: #ac2925; color: #eee;}
+
+/* 对话框 */
+.dialog{ position: relative; padding: 8px; background-color: #666; border-radius: 15px; word-wrap:break-word; color: #eee;}
+.dialog .dialog-hook{ position: absolute; left: -5px; top:0;}
+.tooltip-inner{ background-color: #ddd; color: #333;}
+.tooltip.top .tooltip-arrow{ border-top-color: #ddd;}
+.tooltip.right .tooltip-arrow{ border-right-color: #ddd;}
+.tooltip.bottom .tooltip-arrow{ border-bottom-color: #ddd;}
+.tooltip.left .tooltip-arrow{ border-left-color: #ddd;}
+
+/* 细节 */
+.required{ color: #d9534f;}
+.text-gray{ color: #999;}
+.border-1{ border:solid 1px #ccc; }
+.border-bottom-1{ border-bottom:solid 1px #ccc; }
+.border-top-1{ border-top:solid 1px #ccc;}
+.blur{-webkit-filter: blur(2px); -moz-filter: blur(2px); filter: blur(2px);}
+.transition{ transition: all 0.3s ease 0s;}
+.required{ color: #FF5515}
+a.disabled{ color: #999; cursor: not-allowed;}
+a:hover{ text-decoration: none;}
+ul { padding: 0; list-style: none;}
+pre { white-space: pre-wrap; background-color: transparent; border: none; color: inherit;}
+:focus, :active{ outline: none !important;}
+.close{ transition: all 0.3s ease 0s;}
+.badge{ font-size: 10px; font-weight: normal; padding: 2px 5px;}

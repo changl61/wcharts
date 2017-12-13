@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wcharts-帮助文档</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-left">
+        <div class="nav">
+            <a class="nav-top" href="#1">1 概述</a>
+            <a class="nav-top" href="#2">2 ES集群和索引</a>
+            <a class="nav-sec" href="#2.1">2.1 录入ES集群</a>
+            <a class="nav-sec" href="#2.2">2.2 设置ES集群</a>
+            <a class="nav-sec" href="#2.3">2.3 录入ES索引</a>
+            <a class="nav-top" href="#3">3 查询</a>
+            <a class="nav-sec" href="#3.1">3.1 查询</a>
+            <a class="nav-sec" href="#3.2">3.2 查询分组</a>
+            <a class="nav-top" href="#4">4 统计面板</a>
+            <a class="nav-sec" href="#4.1">4.1 统计面板</a>
+            <a class="nav-sec" href="#4.2">4.2 统计面板分组</a>
+            <a class="nav-sec" href="#4.3">4.3 图表</a>
+            <a class="nav-thd" href="#4.3.1">4.3.1 折线图示例</a>
+            <a class="nav-thd" href="#4.3.2">4.3.2 柱状图示例</a>
+            <a class="nav-thd" href="#4.3.3">4.3.3 饼状图示例</a>
+            <a class="nav-thd" href="#4.3.4">4.3.4 仪表盘示例</a>
+            <a class="nav-thd" href="#4.3.5">4.3.5 雷达图示例</a>
+            <a class="nav-thd" href="#4.3.6">4.3.6 表格示例</a>
+            <a class="nav-top" href="#5">5 分享</a>
+            <a class="nav-sec" href="#5.1">5.1 分享查询、图表、面板</a>
+            <a class="nav-sec" href="#5.2">5.2 管理分享</a>
+            <a class="nav-top" href="#6">6 团队帐号</a>
+            <a class="nav-sec" href="#6.1">6.1 创建</a>
+            <a class="nav-sec" href="#6.2">6.2 成员管理</a>
+            <a class="nav-sec" href="#6.3">6.3 帐户切换</a>
+        </div>
+    </div>
+    <div class="app-main">
+        <div class="block">
+            <h3 id="1">1 概述</h3>
+            <p class="text">
+                这是一款Elasticsearch（本文简称ES）可视化工具，在这里你可以方便的查询数据、构建统计图表。本系统惟一依赖您的ES地址，并不会对您的ES集群执行任何写入操作，请您放心使用。
+                <br><br>
+                推荐浏览器IE8+、Safafi、Chrome
+            </p>
+        </div>
+        <div class="block">
+            <h3 id="2">2 ES集群和索引</h3>
+            <h4 id="2.1">2.1 录入ES集群</h4>
+            <p class="text">
+                您登录之后，系统将自动跳转到<span class="label-page">［设置－ES集群］</span>页面。如果您还没有录入您的ES集群，页面将会只有一个<button>＋ES集群地址</button>的按钮。根据对话框，添加ES集群。成功添加ES集群后，这个页面会自动刷新。
+                <br><br>
+                <img src="img/2.1-1.jpg" width="100%">
+            </p>
+
+            <h4 id="2.2">2.2 设置ES集群</h4>
+            <p class="text">
+                点击［设置］图标按钮，可以修改当前ES集群的地址，也可以新增一个ES集群的地址，还可以从历史ES集群中选一个作为当前的ES集群。
+
+                <img src="img/2.2-1.png" width="600">
+            </p>
+
+            <h4 id="2.3">2.3 录入ES索引</h4>
+            <p class="text">
+                一个ES集群包含多个索引，索引相当于数据库的库；ES数据存储在文档中，文档相当于普通数据库的表。为了方便后续构建查询和图表，您需要将使用到的”索引\文档”录入系统。点击<button>＋索引</button>按钮录入索引。
+                <br><br>
+                对于动态索引，* 号代表动态索引的后缀, 例如"some_index_yyy-mm-dd"可写为"some_index*”。
+                <br><br>
+                <img src="img/2.3-1.png" width="600">
+            </p>
+        </div>
+        <div class="block">
+            <h3 id="3">3 查询</h3>
+            <h4 id="3.1">3.1 查询</h4>
+            <p class="text">
+                点击<span class="label-page">［查询］</span>页面右下角工具栏［＋］按钮创建查询。
+                <br><br>
+                <img src="img/3.1-1.png" width="100%">
+                <img src="img/3.1-2.jpg" width="100%">
+            </p>
+            <h4 id="3.2">3.2 查询分组</h4>
+            <p class="text">
+                <span class="label-page">[设置－查询］</span>页面更改查询名称，增删查询分组和查询分组重命名
+                <br><br>
+                <img src="img/3.2-1.png" width="100%">
+            </p>
+        </div>
+        <div class="block">
+            <h3 id="4">4 统计面板</h3>
+            <h4 id="4.1">4.1 统计面板</h4>
+            <p class="text">
+                统计面板是图表的集合，一个统计面板分组包含多个统计面板。
+                <br><br>
+                <img src="img/4.1-1.jpg" width="100%">
+            </p>
+            <h4 id="4.2">4.2 统计面板分组</h4>
+            <p class="text">
+                统计面板名称修改在<span class="label-page">［设置－统计面板管理］</span>中完成；统计面板分组的创建删除也在这里完成。
+                <br><br>
+                <img src="img/4.2-1.png" width="100%">
+            </p>
+            <h4 id="4.3">4.3 图表</h4>
+            <p class="text">
+                点击<span class="label-page">［统计］</span>页面右下角工具栏［＋］按钮创建图表。按弹出框提示，分三步创建图表。
+                <br><br>
+                <img src="img/4.3-1.jpg" width="100%">
+            </p>
+            <h5 id="4.3.1">4.3.1 折线图示例</h5>
+            <p class="text">
+                <img src="img/4.3.1-1.jpg" width="900">
+            </p>
+            <h5 id="4.3.2">4.3.2 柱状图示例</h5>
+            <p class="text">
+                <img src="img/4.3.2-1.jpg" width="900">
+            </p>
+            <h5 id="4.3.3">4.3.3 饼状图示例</h5>
+            <p class="text">
+                <img src="img/4.3.3-1.jpg" width="900">
+            </p>
+            <h5 id="4.3.4">4.3.4 仪表盘示例</h5>
+            <p class="text">
+                <img src="img/4.3.4-1.jpg" width="900">
+            </p><h5 id="4.3.5">4.3.5 雷达图示例</h5>
+            <p class="text">
+                <img src="img/4.3.5-1.jpg" width="900">
+            </p>
+            <h5 id="4.3.6">4.3.6 表格示例</h5>
+            <p class="text">
+                <img src="img/4.3.6-1.jpg" width="900">
+            </p>
+        </div>
+        <div class="block">
+            <h3 id="5">5 分享</h3>
+            <h4 id="5.1">5.1 分享查询、图表、面板</h4>
+            <p class="text" style="overflow: hidden;">
+                查询、图表、面板均可分享, 点击分享按钮, 系统将生成分享链接; 拷贝分享链接发送给好友, 对方在浏览器中粘贴地址, 即可查看到分享的内容。
+                <br><br>
+                <img src="img/5.1-1.jpg" width="30%">&nbsp;
+                <img src="img/5.1-2.jpg" width="30%">&nbsp;
+                <img src="img/5.1-3.jpg" width="30%">&nbsp;
+            </p>
+
+            <h4 id="5.2">5.2 管理分享</h4>
+            <p class="text">
+                <img src="img/5.2-1.jpg" width="900">
+            </p>
+        </div>
+        <div class="block">
+            <h3 id="6">6 团队帐号</h3>
+            <p class="text">
+                "团队帐号"是一个供多个团队成员共同使用的帐号。 正常用户可以创建团队帐户, 自己便是团队帐户的管理员; 管理员身份切换到该团队帐户, 可以添加多个团队成员, 给予"可查看可编辑"或"仅查看"的权限。
+            </p>
+            <h4 id="6.1">6.1 创建</h4>
+            <p class="text" style="overflow: hidden;">
+                以"个人账号"登录系统, 在<span class="label-page">[设置-团队管理]</span>页面, 可以看到"我创建的团队"和"我加入的团队"。
+                <br><br>
+                <img src="img/6.1-1.jpg" width="900">
+            </p>
+
+            <h4 id="6.2">6.2 成员管理</h4>
+            <p class="text">
+                "我创建的团队"我是管理员身份, 切换到该团队, 在<span class="label-page">[设置-团队成员管理]</span>页面, 可以对团队成员进行管理。
+                非团队账号、非团队管理员无权管理团队成员, 是看不到这个页面的。
+                <br/><br>
+                <img src="img/6.2-1.jpg" width="900">
+            </p>
+
+            <h4 id="6.3">6.2 帐户切换</h4>
+            <p class="text">
+                如果我加入了某个团队, 点击"退出登录时", 将弹出"切换帐户"的对话框; 否则将直接退出登录。
+                <br/><br>
+                <img src="img/6.3-1.jpg" width="600">
+            </p>
+        </div>
+    </div>
+</body>
+</html>

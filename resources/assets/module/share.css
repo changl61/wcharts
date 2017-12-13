@@ -1,0 +1,35 @@
+/*-----------------------------------
+ | 分享
+-----------------------------------*/
+.query-list tr td { max-width: 240px; word-break: break-all;}
+.query-list .btn { padding: 0 5px;}
+.query-list .icon-down { font-size: 11px;}
+.query-list tr.source, .query-list tr.source-top { background-color: #333;}
+.query-list tr td._index, .query-list tr th._index { text-align: right; word-break: keep-all;}
+.page-loading {text-align: center; margin-bottom: 20px;}
+.page-loading .iconfont {font-size: 20px;}
+
+.share-top { background-color: #1f1d1d; border: 1px solid #333; margin: 10px 10px 0px; padding: 10px 12px; position: relative;}
+.share-top .title{ margin: 0; line-height: 20px;}
+#auto-refresh{ position: absolute; right: 10px; top: 5px;}
+
+.chart-share{ position: relative; margin: 0 auto; width: 100%;}
+.chart-item .chart-head { cursor: default;}
+
+/* ============== 白色主题 ============== */
+.theme-bright{ background-color: #f7f7f7; color: #333;}
+
+/* 表格 */
+.theme-bright .unit-table{ background: transparent; border-color: #ccc;}
+.theme-bright .unit-table .table-head{ background-color: #eee; border-color: #ccc;}
+.theme-bright .unit-table .table-body tr td{ border-color: #ccc;}
+.theme-bright .unit-table .table-body tr th{ border-color: #ccc;}
+.theme-bright .query-list tr.source, .theme-bright .query-list tr.source-top{ background-color: #eee;}
+
+/* 图表 */
+.theme-bright .chart-item{ background-color: #fff; border-color: #ddd;}
+.theme-bright .chart-item .chart-head{ border-color: #eee;}
+.theme-bright .chart-item .chart-foot{ border-color: #eee;}
+.theme-bright .chart-item .chart-head .chart-title{ color: #333;}
+.theme-bright .btn.btn-icon{ color: #666;}
+.theme-bright .btn.btn-icon:hover{ color: #333;}

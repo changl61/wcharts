@@ -1,0 +1,33 @@
+{
+  "name": "elastic-charts",
+  "version": "1.0.0",
+  "description": "Wonderful charts based on elasticsearch.",
+  "main": "",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "1030518741@qq.com",
+  "license": "",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-less": "^3.3.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "open": "0.0.5"
+  }
+}

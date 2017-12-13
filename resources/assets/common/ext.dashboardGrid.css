@@ -1,0 +1,19 @@
+/*-----------------------------------
+ | 统计面板表格展示
+-----------------------------------*/
+.dashboard-grid{ width: 100%;}
+.dashboard-grid .dashboard-row{ width: 100%;}
+.dashboard-grid .dashboard-cell{ float: left; height: 100%; padding-right: 10px; padding-bottom: 10px;}
+.dashboard-grid .dashboard-cell:last-child{ padding-right: 0;}
+.dashboard-grid .dashboard-cell .delete-row{ position: absolute; top: 5px; right: 5px; display: none;}
+.dashboard-grid .dashboard-cell:first-child .delete-row{ display: inline-block;}
+.dashboard-grid .dashboard-cell.target > div { box-shadow: 0 0 4px #0ac;}
+.dashboard-grid .chart-item{ position: relative; height: 100%; width: auto;}
+.dashboard-grid .chart-empty{ position: relative; border: solid 1px #333; height: 100%; background: repeating-linear-gradient(-128deg, #111, #111 10px, #191919 10px, #222 20px);}
+.dashboard-grid .chart-body{ text-align: center; }
+.dashboard-grid .chart-body .tips{ color: #555; font-size: 20px; padding-top: 20px;}
+.dashboard-grid .chart-body .btn{ background-color: transparent; color: #aaa; margin-top: 20px; border-color: #666;}
+.dashboard-grid .chart-body .btn:hover{ color: #ddd; border-color: #888;}
+
+.theme-bright .dashboard-grid .chart-empty{ border: solid 1px #eee; height: 100%; background: repeating-linear-gradient(-128deg, #fff, #fff 10px, #fafafa 10px, #f8f8f8 20px);}
+.theme-bright .dashboard-grid .chart-body .tips{ color: #888}

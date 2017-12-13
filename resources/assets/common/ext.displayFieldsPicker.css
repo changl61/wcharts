@@ -1,0 +1,11 @@
+/*-----------------------------------
+ | 显示字段拾取
+-----------------------------------*/
+.unit-display-fields-picker{ position: relative; z-index: 2000;}
+.unit-display-fields-picker .tooltip{ width: 200px; opacity: 1;}
+.unit-display-fields-picker .tooltip.left{ left: -198px; top: 0px;}
+.unit-display-fields-picker .tooltip.left .tooltip-arrow{top: 14px; border-left-color:#555;}
+.unit-display-fields-picker .tooltip-inner{ text-align: left; background-color: #555;}
+.unit-display-fields-picker .fields-list{ padding: 8px; margin: 0;}
+.unit-display-fields-picker .fields-list li{ border-bottom: dashed 1px #666; padding: 3px 0; color: #eee;}
+.unit-display-fields-picker .fields-list li:last-child{ border-bottom: none;}

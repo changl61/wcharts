@@ -1,0 +1,8 @@
+/*-----------------------------------
+ | 过滤条件插件
+-----------------------------------*/
+.es-filter{ list-style: none; padding: 0; margin: 0;}
+.es-filter .filter-item{ margin-bottom: 8px;}
+.es-filter .form-control{ width: 100px;}
+.es-filter .filter-value{ width: 100px; position: relative; display: inline-block; vertical-align: middle;}
+.es-filter .delete-filter{ position: absolute; right: -18px; top: 8px; color: #a94442; cursor: pointer;}

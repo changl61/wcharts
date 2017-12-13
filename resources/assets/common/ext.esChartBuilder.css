@@ -1,0 +1,12 @@
+/*-----------------------------------
+ | 图表构造器
+-----------------------------------*/
+.es-chart-builder{ padding-bottom: 10px;}
+.es-chart-builder .line-item{ position: relative; }
+.es-chart-builder .line-item .btn-delete{ position: absolute; top: -17px; right: 3px; font-size: 11px;}
+.es-chart-builder .input-name{ background-color: transparent;}
+.es-chart-builder .indicator-item{ position: relative; }
+.es-chart-builder .indicator-item .btn-delete{ position: absolute; top: -17px; right: 3px; font-size: 11px;}
+.es-chart-builder .dropdown-menu{ max-height: 300px; overflow-y: auto;}
+.es-chart-builder .dropdown-menu li a{ padding-right: 25px;}
+.es-chart-builder .form-control{ display: inline-block;}

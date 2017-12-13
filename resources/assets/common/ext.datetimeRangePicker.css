@@ -1,0 +1,23 @@
+/*-----------------------------------
+ | 时间范围选择器
+-----------------------------------*/
+#datetime-range-picker {}
+#datetime-range-picker button{ padding: 3px 6px; height: 28px; }
+#datetime-range-picker .modal-header { padding: 13px 10px 10px 10px;}
+#datetime-range-picker .modal-header h4 { font-size: 14px;}
+#datetime-range-picker .modal-header.sub-header { border-top: solid 1px #333; padding-top: 10px;}
+#datetime-range-picker .modal-body { background-color: #141414; padding: 10px;}
+#datetime-range-picker .modal-body .datetime-absolute { text-align: center;}
+#datetime-range-picker .modal-body .datetime-absolute .form-control { width: 150px; display: inline-block; padding: 3px 6px; height: 28px;}
+#datetime-range-picker .modal-body .datetime-absolute .btn { font-size: 12px; width: 80px; text-align: center; margin-top: 10px;}
+#datetime-range-picker .modal-body .datetime-relative { list-style: none; margin: 0; padding: 0px; overflow: hidden;}
+#datetime-range-picker .modal-body .datetime-relative li{ float: left; margin-right: 58px;}
+#datetime-range-picker .modal-body .datetime-relative li:last-child{ margin-right: 0px;}
+#datetime-range-picker .modal-body .datetime-relative li:first-child{ margin-left: 50px;}
+#datetime-range-picker .modal-body .datetime-relative li .btn{ margin-bottom: 5px; width: 100%; text-align: center; font-size: 12px;}
+#datetime-range-picker .modal-body .datetime-relative li .btn:last-child{ margin-bottom: 0px;}
+#datetime-range-picker .modal-body .datetime-relative li.btns-month{ width: 80px;}
+#datetime-range-picker .modal-body .datetime-relative li.btns-day{ width: 70px;}
+#datetime-range-picker .modal-body .datetime-relative li.btns-hour{ width: 80px;}
+#datetime-range-picker .modal-body .datetime-relative li.btns-minute{ width: 80px;}
+#datetime-range-picker .modal-footer { padding: 10px;}

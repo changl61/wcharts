@@ -1,0 +1,17 @@
+body{ background-color: #f4f4f4; margin: 0; color: #333;}
+h3{ margin: 0; padding: 15px 0 5px 0;}
+h4{ margin: 0; padding: 10px 0 5px 0;}
+h5{ margin: 0; padding: 5px 0 5px 0;}
+ul, dl{ list-style: none;}
+button{ }
+
+.app-main{ margin-left: 230px; padding: 0 50px;}
+.app-left{ position: fixed; width: 230px; height: 2000px; background-color: #f7f7f7; border-right:solid 1px #ddd; box-shadow: 2px 0px 6px #ddd;}
+.label-page { color: #0000ff;}
+
+.nav{ padding: 15px;}
+.nav a{ display: block; text-decoration: none; color: #444; font-size: 15px; font-weight: bold;}
+.nav a:hover{ display: block; color: #0000cc;}
+.nav a.nav-top{ padding: 6px 0;}
+.nav a.nav-sec{ font-size: 13px; padding: 2px 12px;}
+.nav a.nav-thd{ font-size: 11px; padding-left: 34px;}

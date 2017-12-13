@@ -1,0 +1,420 @@
+<!-- 异步模版 - 图表相关 - 折线图构造器 -->
+<script id="tpl-chart-lineBuilder" type="text/html">
+    <fieldset>
+        <legend>时间范围</legend>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">字段</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="scope.field" value="<%= scope.field %>" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">跨度</label>
+            <div class="col-sm-10 form-input">
+                <label class="label-datetime">
+                    <i class="glyphicon glyphicon-time"></i>
+                    <input class="form-control" type="text" name="scope.range" value="<%= scope.range %>">
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">粒度</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="scope.interval" value="<%= scope.interval %>" />
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="line-list">
+        <% _.each(lines, function (item, index) { %>
+        <fieldset class="line-item">
+            <legend><input class="form-control input-name" type="text" name="line.name" value="<%= item.name %>" title="请输入折线名称, 不要重复" /></legend>
+            <button class="btn btn-icon btn-delete" type="button" handle="deleteLine">
+                <i class="iconfont icon-remove text-danger"></i>
+            </button>
+            <div class="form-group">
+                <label class="col-sm-2 form-label">统计</label>
+                <div class="col-sm-10 form-input">
+                    <input type="hidden" name="line.method" value="<%= item.method %>" />
+                    <input type="hidden" name="line.field" value="<%= item.field %>" data-options='["<%= item.field %>"]'/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 form-label">筛选</label>
+                <div class="col-sm-10 form-input">
+                    <input type="hidden" name="line.filters" value='<%= item.filters ? JSON.stringify(item.filters) : "[]" %>' />
+                </div>
+            </div>
+        </fieldset>
+        <% }) %>
+    </div>
+
+    <button class="btn btn-default btn-block" type="button" handle="createLine">
+        <i class="iconfont icon-plus"></i>
+    </button>
+</script>
+
+<!-- 异步模版 - 图表相关 - 折线图构造器 - 折线 -->
+<script id="tpl-chart-lineBuilder-newLine" type="text/html">
+    <fieldset class="line-item">
+        <legend><input class="form-control input-name" type="text" name="line.name" value="" title="请输入折线名称, 不要重复" /></legend>
+        <button class="btn btn-icon btn-delete" type="button" handle="deleteLine">
+            <i class="iconfont icon-remove text-danger"></i>
+        </button>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">统计</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="line.method" value="" />
+                <input type="hidden" name="line.field" value="" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">筛选</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="line.filters" value='[]' />
+            </div>
+        </div>
+    </fieldset>
+</script>
+
+<!-- 异步模版 - 图表相关 - 柱状图构造器 -->
+<script id="tpl-chart-barBuilder" type="text/html">
+    <fieldset>
+        <legend>时间范围</legend>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">字段</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="scope.field" value="<%= scope.field %>" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">跨度</label>
+            <div class="col-sm-10 form-input">
+                <label class="label-datetime">
+                    <i class="glyphicon glyphicon-time"></i>
+                    <input class="form-control" type="text" name="scope.range" value="<%= scope.range %>">
+                </label>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>筛选条件</legend>
+        <input type="hidden" name="scope.filters" value='<%= scope.filters ? JSON.stringify(scope.filters) : "[]" %>' />
+    </fieldset>
+    <fieldset>
+        <legend>统计分类</legend>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">统计</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="statistic.method" value="<%= statistic.method %>" />
+                <input type="hidden" name="statistic.field" value="<%= statistic.field %>" data-options='["<%= statistic.field %>"]' />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">分类</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="category.field" value="<%= category.field %>" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">方式</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="category.bucketing" value="<%= category.bucketing %>" data-options='["<%= category.bucketing %>"]' />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">
+                <i class="glyphicon glyphicon-info-sign text-info" title='请输入数字或"*"号, "*"号代表边界值。单个范围左边的比较方式是">=", 右边的比较方式是"<"。' data-placement="right"></i>
+            </label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="category.ranges" value='<%= category.ranges ? JSON.stringify(category.ranges) : "[]" %>' />
+            </div>
+        </div>
+    </fieldset>
+</script>
+
+<!-- 异步模版 - 图表相关 - 饼状图构造器 -->
+<script id="tpl-chart-pieBuilder" type="text/html">
+    <fieldset>
+        <legend>时间范围</legend>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">字段</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="scope.field" value="<%= scope.field %>" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">跨度</label>
+            <div class="col-sm-10 form-input">
+                <label class="label-datetime">
+                    <i class="glyphicon glyphicon-time"></i>
+                    <input class="form-control" type="text" name="scope.range" value="<%= scope.range %>">
+                </label>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>筛选条件</legend>
+        <input type="hidden" name="scope.filters" value='<%= scope.filters ? JSON.stringify(scope.filters) : "[]" %>' />
+    </fieldset>
+    <fieldset>
+        <legend>统计分类</legend>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">统计</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="statistic.method" value="<%= statistic.method %>" />
+                <input type="hidden" name="statistic.field" value="<%= statistic.field %>" data-options='["<%= statistic.field %>"]' />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">分类</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="category.field" value="<%= category.field %>" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">方式</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="category.bucketing" value="<%= category.bucketing %>" data-options='["<%= category.bucketing %>"]' />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">
+                <i class="glyphicon glyphicon-info-sign text-info" title='请输入数字或"*"号, "*"号代表边界值。单个范围左边的比较方式是">=", 右边的比较方式是"<"。' data-placement="right"></i>
+            </label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="category.ranges" value='<%= category.ranges ? JSON.stringify(category.ranges) : "[]" %>' />
+            </div>
+        </div>
+    </fieldset>
+</script>
+
+<!-- 异步模版 - 图表相关 - 仪表盘构造器 -->
+<script id="tpl-chart-panelBuilder" type="text/html">
+    <fieldset>
+        <legend>时间范围</legend>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">字段</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="scope.field" value="<%= scope.field %>" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">跨度</label>
+            <div class="col-sm-10 form-input">
+                <label class="label-datetime">
+                    <i class="glyphicon glyphicon-time"></i>
+                    <input class="form-control" type="text" name="scope.range" value="<%= scope.range %>">
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>筛选条件</legend>
+        <input type="hidden" name="scope.filters" value='<%= scope.filters ? JSON.stringify(scope.filters) : "[]" %>' />
+    </fieldset>
+
+    <fieldset>
+        <legend>仪表设置</legend>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">统计</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="statistic.method" value="<%= statistic.method %>" />
+                <input type="hidden" name="statistic.field" value="<%= statistic.field %>" data-options='["<%= statistic.field %>"]' />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">上下限</label>
+            <div class="col-sm-10 form-input">
+                <input name="panel.min" class="form-control" placeholder="下限值" value="<%= panel.min %>" style="width: 60px;" /> ~
+                <input name="panel.max" class="form-control" placeholder="上限值" value="<%= panel.max %>" style="width: 100px;" />
+            </div>
+        </div>
+    </fieldset>
+</script>
+
+<!-- 异步模版 - 图表相关 - 仪表盘构造器 -->
+<script id="tpl-chart-radarBuilder" type="text/html">
+    <fieldset>
+        <legend>时间范围</legend>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">字段</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="scope.field" value="<%= scope.field %>" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">范围</label>
+            <div class="col-sm-10 form-input">
+                <label class="label-datetime">
+                    <i class="glyphicon glyphicon-time"></i>
+                    <input class="form-control" type="text" name="scope.range" value="<%= scope.range %>">
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>筛选条件</legend>
+        <input type="hidden" name="scope.filters" value='<%= scope.filters ? JSON.stringify(scope.filters) : "[]" %>' />
+    </fieldset>
+
+    <div class="indicator-list">
+        <% _.each(indicators, function (item, index) { %>
+        <fieldset class="indicator-item">
+            <legend><input type="text" class="form-control input-name" name="indicator.name" value="<%= item.name %>" title="请输入维度名称, 不要重复" /></legend>
+            <button class="btn btn-icon btn-delete" type="button" handle="deleteIndicator">
+                <i class="iconfont icon-remove text-danger"></i>
+            </button>
+            <div class="form-group">
+                <label class="col-sm-2 form-label">统计</label>
+                <div class="col-sm-8 form-input">
+                    <input type="hidden" name="indicator.method" value="<%= item.method %>" />
+                    <input type="hidden" name="indicator.field" value="<%= item.field %>" data-options='["<%= item.field %>"]'/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 form-label">最大值</label>
+                <div class="col-sm-10 form-input">
+                    <input type="text" class="form-control" style="width: 100px;" title="请输入数字" name="indicator.max" value='<%= item.max %>' />
+                </div>
+            </div>
+        </fieldset>
+        <% }) %>
+    </div>
+    <button class="btn btn-default btn-block" type="button" handle="createIndicator">
+        <i class="iconfont icon-plus"></i>
+    </button>
+</script>
+
+<!-- 异步模版 - 图表相关 - 仪表盘构造器 - 维度 -->
+<script id="tpl-chart-radarBuilder-newIndicator" type="text/html">
+    <fieldset class="indicator-item">
+        <legend><input type="text" class="form-control input-name" title="请输入维度名称, 不要重复" name="indicator.name" value="" /></legend>
+        <button class="btn btn-icon btn-delete" type="button" handle="deleteIndicator">
+            <i class="iconfont icon-remove text-danger"></i>
+        </button>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">统计</label>
+            <div class="col-sm-8 form-input">
+                <input type="hidden" name="indicator.method" value="" />
+                <input type="hidden" name="indicator.field" value="" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">最大值</label>
+            <div class="col-sm-10 form-input">
+                <input type="text" class="form-control" style="width: 100px;" title="请输入数字" name="indicator.max" value='' />
+            </div>
+        </div>
+    </fieldset>
+</script>
+
+<!-- 异步模版 - 图表相关 - 仪表盘构造器 -->
+<script id="tpl-chart-tableBuilder" type="text/html">
+    <fieldset>
+        <legend>时间范围</legend>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">字段</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="scope.field" value="<%= scope.field %>" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">跨度</label>
+            <div class="col-sm-10 form-input">
+                <label class="label-datetime">
+                    <i class="glyphicon glyphicon-time"></i>
+                    <input class="form-control" type="text" name="scope.range" value="<%= scope.range %>">
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>筛选条件</legend>
+        <input type="hidden" name="scope.filters" value='<%= scope.filters ? JSON.stringify(scope.filters) : "[]" %>' />
+    </fieldset>
+
+    <fieldset>
+        <legend>表格设置</legend>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">统计</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="statistic.method" value="<%= statistic.method %>" />
+                <input type="hidden" name="statistic.field" value="<%= statistic.field %>" data-options='["<%= statistic.field %>"]' />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">列</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="table.col" value='<%= table.col ? JSON.stringify(table.col) : "[]" %>' />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 form-label">行</label>
+            <div class="col-sm-10 form-input">
+                <input type="hidden" name="table.row" value='<%= table.row ? JSON.stringify(table.row) : "[]" %>' />
+            </div>
+        </div>
+    </fieldset>
+</script>
+
+<!-- 异步模版 - 图表相关 - 创建图表1(选择形式) -->
+<script id="tpl-chart-createChart-1" type="text/html">
+    <form class="chart-format-picker">
+        <ul class="chart-format-list">
+            <% _.each(formats, function(item){ %>
+            <li class="chart-format-item">
+                <label class="label-checkbox radio-hook">
+                    <input type="radio" name="format" value="<%= item.key %>">
+                    <span class="input-replacement"></span>
+                </label>
+                <p class="format-icon"><i class="iconfont icon-chart-<%= item.key %>"></i></p>
+                <%= item.name %>
+            </li>
+            <% }) %>
+        </ul>
+    </form>
+</script>
+
+<!-- 异步模版 - 图表相关 - 创建图表2(选择索引) -->
+<script id="tpl-chart-createChart-2" type="text/html">
+    <form class="chart-index-picker">
+        <% if (indices.length) { %>
+        <ul class="chart-index-list">
+            <% _.each(indices, function(item){ %>
+            <li>
+                <%= item.name %>
+                <label class="label-checkbox radio-hook">
+                    <input type="radio" name="index" value="<%= item.id %>">
+                    <span class="input-replacement"></span>
+                </label>
+            </li>
+            <% }) %>
+        </ul>
+        <% } else { %>
+        您还没有录入索引, 请转到 <a class="link" href="/setting/es">[设置-ES集群]</a> 页面录入索引
+        <% } %>
+    </form>
+</script>
+
+<!-- 异步模版 - 图表相关 - 创建图表3(构建图表) -->
+<script id="tpl-chart-createChart-3" type="text/html">
+    <div class="chart-panel">
+        <input type="hidden" name="id" value="" />
+        <div class="chart-name">
+            <b>图表名称</b><input type="text" class="form-control" name="name" value="" />
+            <button class="btn btn-running pull-right" handle="runChart" type="button">
+                运行 <i class="iconfont icon-loading do-spin" style="display: none;"></i>
+            </button>
+        </div>
+        <div class="chart-builder">
+            <input type="hidden" name="builder" value="" />
+        </div>
+    </div>
+    <div class="chart-preview">
+        <div class="chart-body"></div>
+    </div>
+</script>
