@@ -21,7 +21,7 @@ Wonderful charts based on elasticsearch.
 ```
 server {
     listen       80;
-    server_name  ffan-wcharts;
+    server_name  wcharts;
 
     root   /var/www/wcharts/public;
     index  index.html index.htm index.php;
