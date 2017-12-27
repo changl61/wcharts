@@ -1,9 +1,13 @@
 # wcharts 
-Wonderful charts based on elasticsearch. 
-
+Wonderful charts based on elasticsearch.   
+ 
 ## 简介 
 这是一款Elasticsearch（本文简称ES）可视化工具，在这里你可以方便的查询数据、构建统计图表、分享查询结果和统计图表、团队协作。本系统惟一依赖您的ES地址，并不会对您的ES集群执行任何写入操作，请您放心使用。
- 
+  
+![img](https://raw.githubusercontent.com/changl61/wcharts/master/resources/demo/charts.jpg)
+![img](https://raw.githubusercontent.com/changl61/wcharts/master/resources/demo/query.jpg)
+![img](https://raw.githubusercontent.com/changl61/wcharts/master/resources/demo/setting.jpg)
+
 ## 私有部署
 本项目前端采用Bootstrap v3 + Jquery + Echarts, 后端采用PHP phalcon3.2框架 + nginx + mysql。
 ##### 1.环境
@@ -55,4 +59,4 @@ server {
 登录后进入系统, 请切换至 [设置/账号管理] 页面修改密码。
 
 ## 演示地址
-敬请期待...
+[http://120.92.165.5](http://120.92.165.5)
