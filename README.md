@@ -57,5 +57,5 @@ server {
 ## 演示地址
 [http://120.92.165.5]
 
-![image][https://raw.githubusercontent.com/changl61/wcharts/master/resources/demo/charts.jpg]
+![img](https://raw.githubusercontent.com/changl61/wcharts/master/resources/demo/charts.jpg)
 
