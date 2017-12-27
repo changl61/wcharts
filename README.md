@@ -55,4 +55,7 @@ server {
 登录后进入系统, 请切换至 [设置/账号管理] 页面修改密码。
 
 ## 演示地址
-敬请期待...
+[http://120.92.165.5](wcharts)
+
+![image][https://raw.githubusercontent.com/changl61/wcharts/master/resources/demo/charts.jpg]
+
